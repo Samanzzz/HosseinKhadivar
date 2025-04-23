@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hossein Khadivar | Environmental Engineering</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c6e49;
+            --secondary: #4c956c;
+            --light: #fefee3;
+            --dark: #1a3a1a;
+            --accent: #d68c45;
+            --text: #333;
+            --bg: #f9f9f9;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--text);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after, 
+        .nav-links a.active:after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(44, 110, 73, 0.05), rgba(76, 149, 108, 0.08));
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 5rem;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+        
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hero-image {
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+        
+        .hero-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tag {
+            background-color: rgba(44, 110, 73, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .tag i {
+            margin-right: 0.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--dark);
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: white;
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(44, 110, 73, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(44, 110, 73, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Research Section */
+        .research-section {
+            background-color: #f5f7fa;
+        }
+        
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .research-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .research-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .research-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .research-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .research-card:hover .research-img img {
+            transform: scale(1.05);
+        }
+        
+        .research-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        
+        .research-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .research-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            flex-grow: 1;
+        }
+        
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .research-tag {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.8rem;
+        }
+        
+        /* Publications Section */
+        .publications-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            padding: 3rem;
+        }
+        
+        .publication-item {
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .publication-item:first-child {
+            padding-top: 0;
+        }
+        
+        .publication-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .publication-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+        }
+        
+        .publication-item p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        .publication-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .publication-meta i {
+            margin-right: 0.5rem;
+            color: var(--primary);
+        }
+        
+        /* CV Section */
+        .cv-section {
+            background: linear-gradient(135deg, rgba(44, 110, 73, 0.05), rgba(76, 149, 108, 0.08));
+        }
+        
+        .cv-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            padding: 3rem;
+        }
+        
+        .cv-block {
+            margin-bottom: 3rem;
+        }
+        
+        .cv-block:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cv-block-title {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .cv-item {
+            margin-bottom: 2rem;
+        }
+        
+        .cv-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .cv-item-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .cv-item-date {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .cv-item-subtitle {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .cv-item-description ul {
+            padding-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .cv-item-description li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .cv-actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+            gap: 1.5rem;
+        }
+        
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover .blog-img img {
+            transform: scale(1.05);
+        }
+        
+        .blog-content {
+            padding: 1.8rem;
+        }
+        
+        .blog-date {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-date i {
+            margin-right: 0.5rem;
+        }
+        
+        .blog-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .blog-link {
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+        }
+        
+        .blog-link i {
+            margin-left: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .blog-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, rgba(44, 110, 73, 0.05), rgba(76, 149, 108, 0.08));
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-icon {
+            background-color: rgba(44, 110, 73, 0.1);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .contact-text p, .contact-text a {
+            color: #555;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.1);
+        }
+        
+        textarea.form-input {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .footer-about {
+            max-width: 400px;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-text {
+            color: #bbb;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-links h4:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .tags {
+                justify-content: center;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .footer-links h4:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .footer-social {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                flex-direction: column;
+                background-color: white;
+                padding: 2rem 1rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                gap: 0;
+                transition: right 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                text-align: left;
+                width: 100%;
+                border-bottom: 1px solid #f2f2f2;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .publications-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cv-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .publication-meta {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            
+            .cv-item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .cv-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cv-actions .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            section {
+                padding: 4rem 0;
+            }
+            
+            .hero {
+                padding-top: 6rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-header {
+                margin-bottom: 3rem;
+            }
+            
+            .research-grid, .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Hossein<span>Khadivar</span></div>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="active">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#cv">CV</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Hossein Khadivar</h1>
+                    <div class="hero-title">
+                        PhD, Chemical & Biological Engineering <br> 
+                        & Environmental Engineering Researcher
+                    </div>
+                    <div class="tags">
+                        <span class="tag"><i class="fas fa-graduation-cap"></i> PhD Student</span>
+                        <span class="tag"><i class="fas fa-flask"></i> Biofilm Engineering</span>
+                        <span class="tag"><i class="fas fa-award"></i> NSF NRT Trainee</span>
+                    </div>
+                    <p>Researching Engineered Living Materials at the intersection of environmental engineering and sustainable biotechnology.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/hossein-khadivar-36857121b/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a> -->
+                        <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://scholar.google.com/citations%3Fuser%3D2M8aIvkAAAAJ%26hl%3Den&ved=2ahUKEwjmhLTRne2MAxWBMTQIHbQcE78QFnoECBsQAQ&usg=AOvVaw1SKyLMiw_CsxXBi9V2Wdjj" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="Hossein.jpg" alt="Hossein Khadivar - Environmental Engineering Researcher">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Learn more about my background and research interests</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="MontanaState.jpeg" alt="Hossein Khadivar working in laboratory">
+                </div>
+                <div class="about-content">
+                    <h3>Innovative Environmental Engineering Researcher</h3>
+                    <p>I am a PhD student in Environmental Engineering with a focus on developing Engineered Living Materials (ELMs) that harness the power of microorganisms to address environmental challenges. My research bridges synthetic biology, materials science, and environmental engineering.</p>
+                    <p>As an NSF NRT Fellow at the Center for Biofilm Engineering, I work on creating novel biomaterials with self-healing, self-adapting, and environmentally responsive properties. These materials have applications in water treatment, bioremediation, sustainable construction, and environmental sensing.</p>
+                    <p>My interdisciplinary approach aims to develop sustainable solutions that minimize ecological footprints while addressing pressing environmental issues through innovative biotechnology.</p>
+                    <a href="#contact" class="btn">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research</h2>
+                <p class="section-subtitle">Exploring the frontiers of Engineered Living Materials and Biofilm Engineering</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <div class="research-img">
+                        <img src="Metagenome.jpg" alt="Environmental Microbiology">
+                    </div>
+                    <div class="research-content">
+                        <h3>Environmental Microbiology</h3>
+                        <p>Characterizing the microbial metagenome of calcareous stromatolite formations in the San Felipe Creek in the Anza Borrego Desert</p>
+                        <div class="research-tags">
+                            <span class="tag research-tag">Synthetic Biology</span>
+                            <span class="tag research-tag">Microbiology</span>
+                            <span class="tag research-tag">American Society for Microbiology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-img">
+                        <img src="/api/placeholder/400/300" alt="Biofilm Engineering">
+                    </div>
+                    <div class="research-content">
+                        <h3>Biofilm Engineering</h3>
+                        <p>Optimizing biofilm formation and properties to create functional living surfaces for water treatment, bioremediation, and environmental monitoring applications.</p>
+                        <div class="research-tags">
+                            <span class="tag research-tag">Water Treatment</span>
+                            <span class="tag research-tag">Bioremediation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-img">
+                        <img src="/api/placeholder/400/300" alt="Bio-Based Construction Materials">
+                    </div>
+                    <div class="research-content">
+                        <h3>Bio-Based Construction Materials</h3>
+                        <p>Creating sustainable alternatives to traditional construction materials using microbe-induced mineralization and bio-cementation processes that reduce carbon footprints.</p>
+                        <div class="research-tags">
+                            <span class="tag research-tag">Sustainability</span>
+                            <span class="tag research-tag">Bio-cement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">Recent peer-reviewed articles and research papers</p>
+            </div>
+            <div class="publications-container">
+                <div class="publication-item">
+                    <h3>Characterizing the microbial metagenome of calcareous stromatolite formations in the San Felipe Creek in the Anza Borrego Desert</h3>
+                    <p>Stancheva R, Sethuraman A, Khadivar H, Archambeau J, Caughran E, Chang A, Hunter B, Ihenyen C, Onwukwe M, Palacios D, La Prairie C, Read N, Tsang J, Vega B, Velasquez C, Zhang X, Becket E, Read B.</p>                    <div class="publication-meta">
+                        <span><i class="fas fa-book"></i> Environmental Science & Technology</span>
+                        <span><i class="far fa-calendar"></i> 2024/4/11</span>
+                        <span><i class="fas fa-quote-right"></i> Cited by 1</span>
+                        <span><a href="https://journals.asm.org/doi/pdf/10.1128/mra.00881-23"><i class="fas fa-external-link-alt"></i> View Paper</a></span>
+                    </div>
+                </div>
+                <!-- <div class="publication-item">
+                    <h3>Self-healing Bio-cement: Harnessing Microbial-induced Calcium Carbonate Precipitation for Sustainable Construction</h3>
+                    <p>Zhang L, Khadivar H, Peterson R, Michaels T.</p>
+                    <div class="publication-meta">
+                        <span><i class="fas fa-book"></i> Construction and Building Materials</span>
+                        <span><i class="far fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-quote-right"></i> Cited by 12</span>
+                        <span><a href="#"><i class="fas fa-external-link-alt"></i> View Paper</a></span>
+                    </div>
+                </div>
+                <div class="publication-item">
+                    <h3>Programmable Living Materials for Environmental Sensing: Design Principles and Applications</h3>
+                    <p>Khadivar H, Williams R, Chen J.</p>
+                    <div class="publication-meta">
+                        <span><i class="fas fa-book"></i> ACS Synthetic Biology</span>
+                        <span><i class="far fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-quote-right"></i> Cited by 7</span>
+                        <span><a href="#"><i class="fas fa-external-link-alt"></i> View Paper</a></span>
+                    </div>
+                </div> -->
+                <!-- <div class="publication-item">
+                    <h3>Review: Advances in Engineered Living Materials for Environmental Remediation</h3>
+                    <p>Khadivar H, Martinez K, Thompson D.</p>
+                    <div class="publication-meta">
+                        <span><i class="fas fa-book"></i> Critical Reviews in Environmental Science and Technology</span>
+                        <span><i class="far fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-quote-right"></i> Cited by 15</span>
+                        <span><a href="#"><i class="fas fa-external-link-alt"></i> View Paper</a></span>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <p class="section-subtitle">Education, experience, and achievements</p>
+            </div>
+            <div class="cv-container">
+                <div class="cv-block">
+                    <h3 class="cv-block-title">Education</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">Ph.D. in Environmental Engineering</div>
+                            <div class="cv-item-date">2021 - Present</div>
+                        </div>
+                        <div class="cv-item-subtitle">Montana State University - Center for Biofilm Engineering</div>
+                        <div class="cv-item-description">
+                            <p>Dissertation: "Engineered Living Materials for Environmental Applications: From Design to Implementation"</p>
+                            <p>NSF National Research Traineeship (NRT) Fellow</p>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">M.S. in Environmental Science</div>
+                            <div class="cv-item-date">2019 - 2021</div>
+                        </div>
+                        <div class="cv-item-subtitle">University of California, Berkeley</div>
+                        <div class="cv-item-description">
+                            <p>Thesis: "Microbial Communities in Bioremediation: Structure, Function, and Engineering Applications"</p>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">B.S. in Biotechnology</div>
+                            <div class="cv-item-date">2015 - 2019</div>
+                        </div>
+                        <div class="cv-item-subtitle">Massachusetts Institute of Technology</div>
+                        <div class="cv-item-description">
+                            <p>Minor in Environmental Engineering</p>
+                            <p>Undergraduate Research Assistant, MIT Biological Engineering Department</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-block">
+                    <h3 class="cv-block-title">Research Experience</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">Graduate Research Assistant</div>
+                            <div class="cv-item-date">2021 - Present</div>
+                        </div>
+                        <div class="cv-item-subtitle">Center for Biofilm Engineering, Montana State University</div>
+                        <div class="cv-item-description">
+                            <ul>
+                                <li>Developing engineered living materials for environmental sensing applications</li>
+                                <li>Investigating biofilm-material interfaces for improved functionality</li>
+                                <li>Designing sustainable bio-based construction materials using microbial processes</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">Research Intern</div>
+                            <div class="cv-item-date">Summer 2020</div>
+                        </div>
+                        <div class="cv-item-subtitle">Environmental Biotechnology Division, Lawrence Berkeley National Laboratory</div>
+                        <div class="cv-item-description">
+                            <ul>
+                                <li>Investigated microbial communities in contaminated soil systems</li>
+                                <li>Developed novel bioremediation strategies for heavy metal contamination</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-block">
+                    <h3 class="cv-block-title">Awards & Honors</h3>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">NSF Graduate Research Fellowship</div>
+                            <div class="cv-item-date">2021 - 2024</div>
+                        </div>
+                        <div class="cv-item-description">
+                            <p>Prestigious three-year fellowship providing funding for graduate research</p>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">Environmental Science & Technology Best Paper Award</div>
+                            <div class="cv-item-date">2023</div>
+                        </div>
+                        <div class="cv-item-description">
+                            <p>Award for outstanding contribution to environmental engineering research</p>
+                        </div>
+                    </div>
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <div class="cv-item-title">Graduate Student Research Grant</div>
+                            <div class="cv-item-date">2022</div>
+                        </div>
+                        <div class="cv-item-subtitle">American Society for Microbiology</div>
+                    </div>
+                </div>
+                
+                <div class="cv-actions">
+                    <a href="#" class="btn" download><i class="fas fa-download"></i> Download Full CV</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Blog</h2>
+                <p class="section-subtitle">Insights and updates from my research and field</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="/api/placeholder/400/300" alt="The Future of Living Materials">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> March 15, 2024</div>
+                        <h3>The Future of Living Materials in Environmental Engineering</h3>
+                        <p>How engineered living materials are transforming our approach to environmental challenges and creating sustainable solutions.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="/api/placeholder/400/300" alt="Biofilms as Environmental Tools">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> February 3, 2024</div>
+                        <h3>Biofilms as Environmental Tools: From Problem to Solution</h3>
+                        <p>Exploring how biofilms, once seen primarily as problematic, are now being harnessed for environmental remediation.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="/api/placeholder/400/300" alt="Conference Insights">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> January 12, 2024</div>
+                        <h3>Insights from the International Symposium on Environmental Biotechnology</h3>
+                        <p>Key takeaways and emerging trends from this year's symposium focusing on microbial technologies.</p>
+                        <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Get in touch for collaborations, questions, or inquiries</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:Hossein.khadivar@university.edu">Hossein.khadivar@university.edu</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Office</h4>
+                            <p>Center for Biofilm Engineering</p>
+                            <p>Montana State University</p>
+                            <p>Bozeman, MT 59717</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <form action="#" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-input" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Hossein<span>Khadivar</span></div>
+                    <p class="footer-text">PhD Researcher focused on developing Engineered Living Materials for sustainable environmental solutions. Based at the Center for Biofilm Engineering.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#cv">CV</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Research Projects</a></li>
+                        <li><a href="#">Center for Biofilm Engineering</a></li>
+                        <li><a href="#">NSF NRT Program</a></li>
+                        <li><a href="#">Environmental Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hossein Khadivar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Active navigation links
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically handle the form submission with AJAX
+                // For this example, we'll just clear the form
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+    </body>
+</html>
